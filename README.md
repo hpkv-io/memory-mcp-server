@@ -44,6 +44,10 @@ The [memory_tool_usage_guide.mdc](./memory_tool_usage_guide.mdc) file contains t
 - Best practices for memory retrieval
 - Naming conventions for organizing memories
 
+## OAuth Troubleshooting
+
+In certain situations, like when you resume from sleep longer than 30 minutes, `mcp-remote` might have trouble refreshing your token and it consitantly generates new Client IDs that lead to the loop of trying to register a new Client ID, openning API Key selection page and goingback to generating a new Client ID. To fix this, disable the MCP server, clear the `.mcp-auth` folder with a command similar to `rm -rf ~/.mcp-auth` and re-enable it. This should fix any authentication issue you were experiencing. 
+
 ## Learn More
 
 For more information, check out our [blog post about Memory MCP](https://hpkv.io/blog/2025/04/mcp-memory-with-hpkv) and the [HPKV documentation](https://hpkv.io/docs).
