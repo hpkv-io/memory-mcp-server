@@ -33,7 +33,7 @@ In short, it makes AI coding assistants in Cursor much more reliable by giving t
 
 3. After adding the Memory MCP Server, you'll be prompted to login to your HPKV account. Follow the instructions to connect your API key.
   
-4. Add the memory cursor rule to your project
+4. Add the memory cursor rule to your project and set it to `Always`.
 
 ## Cursor Rule Document
 
