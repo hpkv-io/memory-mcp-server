@@ -16,7 +16,7 @@ In short, it makes AI coding assistants in Cursor much more reliable by giving t
 
 ## Adding to Cursor IDE
 
-1. Create a free [HPKV account](https://hpkv.io/signup)
+1. Create a free [HPKV account](https://hpkv.io/signup) and create an API Key in Dashboard.
    
 2. Edit your `mcp.json` file:
 
@@ -31,7 +31,7 @@ In short, it makes AI coding assistants in Cursor much more reliable by giving t
 }
 ```
 
-3. After adding the Memory MCP Server, you'll be prompted to login to your HPKV account. Follow the instructions to connect your API key.
+3. After adding the Memory MCP Server, you'll be prompted to login to your HPKV account. After that you can select the API key you generated.
   
 4. Add the memory cursor rule to your project and set the rule type to `Always`.
 
