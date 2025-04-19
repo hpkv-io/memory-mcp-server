@@ -14,7 +14,7 @@ The Memory MCP Server implements the Model Context Protocol (MCP) to give LLMs t
 
 In short, it makes AI coding assistants in Cursor much more reliable by giving them access to persistent memory.
 
-## How to add to Cursor IDE
+## Adding to Cursor IDE
 
 1. Create a free [HPKV account](https://hpkv.io/signup)
    
