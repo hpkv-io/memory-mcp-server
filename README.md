@@ -46,7 +46,7 @@ The [memory_tool_usage_guide.mdc](./memory_tool_usage_guide.mdc) file contains t
 
 ## OAuth Troubleshooting
 
-In certain situations, like when you resume from sleep longer than 30 minutes, `mcp-remote` might have trouble refreshing your token and it consitantly generates new Client IDs that lead to the loop of trying to register a new Client ID, openning API Key selection page and goingback to generating a new Client ID. To fix this, disable the MCP server in Cursor, kill all `mcp-remote` processes and clear the `.mcp-auth` folder with a command similar to `pkill -f mcp-remote && rm -rf ~/.mcp-auth` and then re-enable it in Cursor. This should fix any authentication issue you were experiencing. 
+In certain situations, `mcp-remote` might have trouble refreshing your token and it consitantly generates new Client IDs that lead to the loop of trying to register a new Client ID, openning API Key selection page and goingback to generating a new Client ID. To fix this, disable the MCP server in Cursor, kill all `mcp-remote` processes and clear the `.mcp-auth` folder with a command similar to `pkill -f mcp-remote && rm -rf ~/.mcp-auth` and then re-enable it in Cursor. This should fix any authentication issue you were experiencing. 
 
 ## Learn More
 
