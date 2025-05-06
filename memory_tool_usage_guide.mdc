@@ -15,7 +15,7 @@ ALWAYS EVALUATE FIRST: Before responding to ANY user request, assess whether you
    - Project-specific concepts not explained in the current query
    - Any continuation of previous tasks
    
-YOU MUST search memory FIRST using `search_keys` or `search_memory` with the user's query. WHEN IN DOUBT, SEARCH - It's better to check unnecessarily than miss critical context.
+Search memory when you might lack necessary context. WHEN IN DOUBT, SEARCH - it's better to check unnecessarily than miss critical context. Only skip searching when the query is completely self-contained.
 
 KEY TRIGGER PHRASES requiring immediate `search_keys` or `search_memory`:
    - "we need to integrate with..."
@@ -28,18 +28,23 @@ KEY TRIGGER PHRASES requiring immediate `search_keys` or `search_memory`:
 ## Overview
 This guide explains how to effectively use the memory tools for storing, retrieving, and utilizing conversation context in agent mode.
 
-## Required Memory Operations
+## Memory Operations
 
-### 1. SEARCH ON EVERY REQUEST
-On EVERY user request, search memory for relevant context:
-- Use the `search_keys` or `search_memory` tool directly
-- Construct a query related to the user's request topic
+### 1. SEARCH WHEN CONTEXT MIGHT BE MISSING
+Search memory when there's any indication you might need additional context:
+- Use the `search_keys` or `search_memory` tool when you have uncertainty
+- Search if there's any chance the user is referencing previous work, discussions, or context
+- Search when the user refers to previous work, decisions, or information not present in the current conversation
+- Construct a query related to the specific missing context
 - Analyze the returned results for relevant context
+- Remember: It's better to search unnecessarily than miss critical context
 
-### 2. STORE AFTER EVERY RESPONSE
-After EVERY assistant response, store a concise memory:
+### 2. STORE AFTER MEANINGFUL RESPONSES
+After assistant responses that contain NEW information or decisions:
 - Use the `store_memory` tool directly
-- Never skip storing important and noteworthy information for future reference 
+- Check existing memories first to avoid redundancy
+- Only store when new facts, decisions, or context emerges
+- Skip storing if your response merely reiterates previously stored information
 - Follow the naming conventions below
 
 ## IMPORTANT Memory Content Guidelines
@@ -48,14 +53,17 @@ After EVERY assistant response, store a concise memory:
 - Store SUMMARIES with key points, not full conversations
 - Focus on extracting IMPORTANT FACTS, preferences, and decisions
 - Include SPECIFIC DETAILS like names, dates, numbers, decisions
+- Compare with existing memories before storing to ensure novelty
 - Add structured metadata for better retrieval
 - Use consistent project_name and session_name values
 
 ### DON'T
 - Store entire conversations verbatim
 - Include confidential/sensitive information
-- Store redundant information
+- Store redundant information that's already captured in previous memories
+- Store responses that don't add new context, facts, or decisions
 - Make memory entries too vague
+- Store memories after every response without evaluating their value
 
 ## IMPORTANT Naming Conventions
 
@@ -117,8 +125,10 @@ Integrate memory seamlessly:
 ## Example Workflow
 
 1. User asks a question
-2. SEARCH memory for relevant context using `search_keys` or `search_memory`
-3. Process user request with memory context
-4. Formulate response
-5. STORE key points from the interaction using `store_memory`
-6. Return response to user
+2. EVALUATE if you might need additional context to answer properly
+3. IF IN DOUBT, SEARCH memory for relevant context using `search_keys` or `search_memory`
+4. Process user request with available context
+5. Formulate response
+6. EVALUATE if response contains NEW information worth storing
+7. IF YES, STORE key points from the interaction using `store_memory`
+8. Return response to user
