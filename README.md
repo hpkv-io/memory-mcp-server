@@ -51,3 +51,5 @@ In certain situations, `mcp-remote` might have trouble refreshing your token and
 ## Learn More
 
 For more information, check out our [blog post about Memory MCP](https://hpkv.io/blog/2025/04/mcp-memory-with-hpkv) and the [HPKV documentation](https://hpkv.io/docs).
+
+Find HPKV Memory MCP on [MCP Hub](https://mcphub.com/mcp-servers/hpkv-io/memory-mcp-server).
