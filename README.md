@@ -24,8 +24,7 @@ In short, it makes AI coding assistants in Cursor much more reliable by giving t
 {
   "mcpServers": {
     "hpkv-memory-server": {
-      "command": "npx",
-      "args": ["mcp-remote", "https://memory-mcp.hpkv.io/sse"]
+      "url": "https://memory-mcp.hpkv.io/sse"
     }
   }
 }
