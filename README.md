@@ -24,7 +24,7 @@ In short, it makes AI coding assistants in Cursor much more reliable by giving t
 {
   "mcpServers": {
     "hpkv-memory-server": {
-      "url": "https://memory-mcp.hpkv.io/sse"
+      "url": "https://memory.hpkv.io/sse"
     }
   }
 }
@@ -33,6 +33,15 @@ In short, it makes AI coding assistants in Cursor much more reliable by giving t
 3. After adding the Memory MCP Server, you'll be prompted to login to your HPKV account. After that you can select the API key you generated.
   
 4. Add the memory cursor rule to your project and set the rule type to `Always`.
+
+### Adding MCP Memory to Claude Code
+
+1. Use the following command:
+
+```bash
+claude mcp add -s user -t sse hpkv-memory-server https://memory.hpkv.io/sse
+```
+2. Add the rules to the end of your `CLAUDE.md` file
 
 ## Cursor Rule Document
 
